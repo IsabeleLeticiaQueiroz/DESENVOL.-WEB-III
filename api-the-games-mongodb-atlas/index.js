@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use("/",gameRoutes);
 // iniciando conexao com o banco de dados mongo db
-mongoose.connect("mongodb://127.0.0.1:27017/api-thegames");
+// mongoose.connect("mongodb://127.0.0.1:27017/api-thegames");
 // vamos trabalhar com arquitetura mvc tambem (models, views, controllers)
 
 //ROTA PRINCIPAL

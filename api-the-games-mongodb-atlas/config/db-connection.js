@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 
-const dbUser = "bbebelequeiroz";
-const dbPassword = "GUSFXmCmTUzULDir";
+const dbUser = "bbelequeiroz";
+const dbPassword = "B5MpQSlgxI90HITs";
 const connect = () => {
     mongoose.connect(
-      `mongodb+srv://${dbUser}:${dbPassword}@cluster0.d5syk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+      `mongodb+srv://${dbUser}:${dbPassword}@cluster0.rhsls52.mongodb.net/api-thegames?retryWrites=true&w=majority&appName=Cluster0`
+      
     );
     const connection = mongoose.connection;
     connection.on("error", () => {
