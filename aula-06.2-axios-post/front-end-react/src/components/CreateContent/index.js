@@ -1,6 +1,7 @@
 import { useState } from "react";
+import {useRouter} from "next/router";
 import styles from "@/components/CreateContent/CreateContent.module.css";
-
+import axios from "axios";
 const CreateContent = () => {
   // Criando os estados para as informações do jogo
   const [title, setTitle] = useState("");
@@ -9,6 +10,7 @@ const CreateContent = () => {
   const [rating, setRating] = useState("");
   const [year, setYear] = useState("");
   const [price, setPrice] = useState("");
+  const router = useRouter();
 
   // tratando a submissao do formulario
   const handleSubmit = async (event) =>{
@@ -25,9 +27,10 @@ const CreateContent = () => {
         },
       };
       try{
-        const response = await axios.post("http:localhost:3000/games", game)
+        const response = await axios.post("http:localhost:4000/games", game)
         if (response.status === 201){
-            alert("Game cadastrado com sucesso!")
+            alert("Game cadastrado com sucesso!");
+            router.push("/home");
         }
       } catch(error){
         console.log(error);
