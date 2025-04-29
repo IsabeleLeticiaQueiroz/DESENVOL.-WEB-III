@@ -27,7 +27,7 @@ const CreateContent = () => {
         },
       };
       try{
-        const response = await axios.post("http:localhost:4000/games", game)
+        const response = await axios.post("http://localhost:4000/games", game)
         if (response.status === 201){
             alert("Game cadastrado com sucesso!");
             router.push("/home");
