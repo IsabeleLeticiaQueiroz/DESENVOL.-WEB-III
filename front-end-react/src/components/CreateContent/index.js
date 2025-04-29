@@ -24,11 +24,22 @@ const CreateContent = () => {
           rating: rating,
         },
       };
-      console.log(game)
+      try{
+        const response = await axios.post("http:localhost:3000/games", game)
+        if (response.status === 201){
+            alert("Game cadastrado com sucesso!")
+        }
+      } catch(error){
+        console.log(error);
+      }
+      // console.log(game)
     } else{
       alert("Por favor, preecha todos os campos!")
     }
   };
+
+
+
 
   return (
     <div className={styles.createContent}>
